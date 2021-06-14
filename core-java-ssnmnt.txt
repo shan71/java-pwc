@@ -1,0 +1,112 @@
+1. Satisfy the following code snippet:
+
+public class CustomerApp{
+
+public static void main(String[] args){
+
+Customer c= new Customer(100,"John","Chennai"); //params: custId, name, city
+
+c.getCustomerDetails(); //prints the details of customer
+
+c.setCity("Bangalore");
+
+c.getCustomerDetails(); //prints the updated details of customer 
+}
+
+}
+
+2. Write a Java application to satisfy the following code snippet.
+
+
+public class OverLoadMain{
+
+public static void main(String[] args){
+
+OverLoadDemo o = new OverloadDemo();
+o.add();
+o.add(2,3);
+o.add(1.0f,4);
+o.add(2.0,4.1);
+
+//add appropriate methods to demonstrate the overloading feature of java
+
+}
+
+}
+
+3. Test Constructor Overloading with the following code snippet:
+
+public class CustomerApp2{
+
+public static void main(String[] args){
+
+Customer c= new Customer(100,"John","Chennai"); //params: custId, name, city
+
+c.getCustomerDetails(); //prints the details of customer
+
+Customer c= new Customer(100,"Ruby","Hyderabad","ruby@nomail.com"); //params: custId, name, city, mail
+
+c.getCustomerDetails(); //prints the updated details of customer 
+}
+
+}
+
+4. Satisfy the given code block
+
+public class DuckDemo{
+	public static void main(String[] args) {
+		System.out.println("in Duck Main...");
+		
+		  Duck d1=new Duck();
+		  Duck d2=new Duck();
+		  Duck d3=new Duck();
+		  Duck d4=new Duck();
+		  Duck d5=new Duck();
+		  
+		 System.out.println(Duck.duckCount);
+		 
+		 Duck.fun();
+		 
+	}
+}
+
+5. In the following code snippet given details:
+
+public class Person{
+protected int id;
+protected String name;
+
+//the code goes here
+}
+public class Employee extends Person{
+protected double salary;
+//the code goes here
+}
+
+public class TraineeEmp extends Employee{
+protected String performance;
+//the code goes here
+}
+
+Satisfy the following code block:
+
+public class Main1 {
+
+	public static void main(String[] args) {
+		
+		Person p=new Person(102, "A");
+		System.out.println(e.getDetails());
+		
+		Employee e= new Employee(100, "Scott", 67000);
+		System.out.println(e.getDetails());
+		
+		TraineeEmp t= new TraineeEmp(100, "Scott", 67000,"good"); 
+		System.out.println(t.getDetails());
+		
+		System.out.println(t);
+		
+		
+
+	}
+
+}
