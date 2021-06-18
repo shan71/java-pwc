@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/demo",initParams = {@WebInitParam(name = "msg",value ="This is a multi Servlet Application.. ")})
+@WebServlet(name = "s1", urlPatterns = "/demo",initParams = {@WebInitParam(name = "msg",value ="This is a multi Servlet Application.. ")})
 
 public class Servlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
