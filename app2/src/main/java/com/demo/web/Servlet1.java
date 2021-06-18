@@ -19,6 +19,7 @@ public class Servlet1 extends HttpServlet {
 			throws ServletException, IOException {
 
 		String message=getServletConfig().getInitParameter("msg");
+		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.print("<h1><u>"+message+"</u></h1>");
@@ -32,6 +33,17 @@ public class Servlet1 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.print("<h1>"+name+" is from "+loc+"</h1>");
+		
+		if(loc.equalsIgnoreCase("hyderabad")) {
+			//send the control to hyd servlet
+			request.getRequestDispatcher("/hyd").forward(request, response);
+		}else if(loc.equalsIgnoreCase("bangalore")) {
+			request.getRequestDispatcher("/blr").forward(request, response);
+			
+		}else {
+			
+			request.getRequestDispatcher("/noLoc").include(request, response);
+		}
 		
 		
 	}
