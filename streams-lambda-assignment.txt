@@ -1,0 +1,23 @@
+1. Create a class Customer as:
+public class Customer{
+
+private int custId;
+private String custName;
+private String city;
+private double orderAmount;
+private String gender;
+
+//generate parametrized constructor
+//setters and getters
+
+}
+
+Create a Stream of 5 Customer Objects with same city name repeated in 3 Objects.
+
+1. show how many customers are there in the repeaded city name
+2. Show the customer details with highest orderValue
+3. Add the order value for all the customers
+4. If the customer is female offer 10% discout (Show it as String with the customer name)
+5. collect the male customers in a seperate List.
+
+Note: use lambda expression and Stream API

@@ -7,7 +7,7 @@ import com.demo.interfaces.MyConnection;
 public class MainApp {
 
 	public static void main(String[] args) {
-		MyConnection con=MyConFactory.getMyConnection("mysql");
+		MyConnection con=MyConFactory.getMyConnection(args[0]);
 		
 		System.out.println(MyConnection.releaseVer);
 		System.out.println(con.getConnectionInfo());
