@@ -15,6 +15,7 @@ public class HIbernateMain1 {
 		
 		Session session = sf.openSession();
 		
+		
 		Transaction tx = session.beginTransaction();
 
 		try {

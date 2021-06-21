@@ -1,8 +1,15 @@
 package com.demo.hibernate;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -21,9 +28,18 @@ public class Employee {
 	@Column(name="SALARY")
 	private double salary;
 	
-	public Employee() {
-		
-	}
+	@ElementCollection(targetClass = String.class)
+	@CollectionTable(name = "CHILDREN",joinColumns = @JoinColumn(name="EMPNO"))
+	@Column(name="children_name")
+	private Set<String> children=new HashSet<String>();
+	
+	@Embedded
+	private Address address;
+	
+	  public Employee() {
+	  
+	  }
+	 
 
 	public Employee(int empId, String name, String city, double salary) {
 		this.empId = empId;
@@ -62,6 +78,24 @@ public class Employee {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
+	}
+
+	public Set<String> getChildren() {
+		return children;
+	}
+
+	public void setChildren(Set<String> children) {
+		this.children = children;
+	}
+
+
+	public Address getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 	
