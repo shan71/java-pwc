@@ -42,9 +42,11 @@ public class Employee {
 	@Embedded
 	private Address address;
 	
-	  public Employee() {
+	
+	  public Employee() { System.out.println("No args constructor called..");
 	  
 	  }
+	 
 	 
 
 	public Employee(int empId, String name, String city, double salary) {
@@ -67,6 +69,7 @@ public class Employee {
 	}
 
 	public void setName(String name) {
+		System.out.println("setName called..");
 		this.name = name;
 	}
 
