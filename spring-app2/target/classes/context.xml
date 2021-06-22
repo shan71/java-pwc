@@ -5,14 +5,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="msg" class="com.demo.spring.Message">
-		<property name="header" value="Lunch Break" />
-		<property name="body" value="Lunch Break at 1:00pm" />
-	</bean>
-	
-	<bean id="myMail" class="com.demo.spring.Mail">
-	<property name="toAddress" value="All"/>
-	<property name="fromAddress" value="instructor"/>
-	<property name="message" ref="msg"/>
+	<bean id="empDao" class="com.demo.spring.dao.DaoMockJdbcImpl" />
+
+	<bean id="empService" class="com.demo.spring.service.EmpService">
+		<property name="dao" ref="empDao" />
 	</bean>
 </beans>
