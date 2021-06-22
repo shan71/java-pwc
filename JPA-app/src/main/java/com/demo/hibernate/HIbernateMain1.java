@@ -23,6 +23,7 @@ public class HIbernateMain1 {
 			Employee e= new Employee(202, "Karan", "Bangalore", 58000);
 			session.save(e);
 			 //session.persist(e);
+			
 		
 			tx.commit();
 		} catch (HibernateException e) {
