@@ -8,7 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class QueryMain {
+public class ProjectionQueryDemo {
 
 	public static void main(String[] args) {
 
@@ -18,11 +18,12 @@ public class QueryMain {
 
 		try {
 			tx.begin();
-			Query query = em.createQuery("select e from Employee as e where e.name like ?1");
-			query.setParameter(1, "%s%");
-			List<Employee> empList = query.getResultList();
+			Query query = em.createNamedQuery("query2");
+			
 
-			empList.stream().forEach(e -> System.out.println(e.getName()));
+			List<Object[]> empList = query.getResultList();
+
+			empList.stream().forEach(e -> System.out.println(e[0]+" "+e[1]));
 			tx.commit();
 		} catch (Exception e) {
 			tx.rollback();

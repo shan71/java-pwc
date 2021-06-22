@@ -10,10 +10,16 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="MYEMP")
+@NamedQueries({
+	@NamedQuery(name="query1",query = "select e from Employee as e where e.name like ?1"),
+	@NamedQuery(name="query2",query = "select e.name,e.salary from Employee as e")
+})
 public class Employee {
 	@Id
 	@Column(name="EMPNO")

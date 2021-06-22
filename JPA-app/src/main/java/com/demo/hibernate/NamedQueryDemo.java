@@ -8,7 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class QueryMain {
+public class NamedQueryDemo {
 
 	public static void main(String[] args) {
 
@@ -18,7 +18,8 @@ public class QueryMain {
 
 		try {
 			tx.begin();
-			Query query = em.createQuery("select e from Employee as e where e.name like ?1");
+			Query query = em.createNamedQuery("query1");
+			
 			query.setParameter(1, "%s%");
 			List<Employee> empList = query.getResultList();
 
