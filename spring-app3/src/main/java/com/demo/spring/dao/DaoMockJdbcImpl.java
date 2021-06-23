@@ -1,8 +1,10 @@
 package com.demo.spring.dao;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+//@Component
+@Repository
 public class DaoMockJdbcImpl implements EmpDao {
 
 	@Override

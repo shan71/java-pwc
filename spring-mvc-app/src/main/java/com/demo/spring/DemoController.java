@@ -12,7 +12,7 @@ public class DemoController {
 	public String getPage() {
 		System.out.println("inside Controller...");
 		
-		return "/WEB-INF/pages/register.jsp";
+		return "register";
 	}
 	
 	@RequestMapping(path="/info",method = RequestMethod.GET)
