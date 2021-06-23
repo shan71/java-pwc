@@ -21,7 +21,6 @@ public class Util implements DemoInterface {
 		}
 	}
 	
-	//Mockito cannot mock static/private/final methods
 	public static String callStatic() {
 		return "static";
 	}
@@ -32,6 +31,10 @@ public class Util implements DemoInterface {
 	
 	public final String callFinal() {
 		return "final";
+	}
+	
+	public String callPrivateMethod() {
+		return this.callPrivate();
 	}
 
 }
