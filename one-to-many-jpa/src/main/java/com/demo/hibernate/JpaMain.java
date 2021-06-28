@@ -15,7 +15,9 @@ public class JpaMain {
 		
 		try {
 			tx.begin();
-			Dept dept=em.find(Dept.class,10 );
+			//Dept dept=em.find(Dept.class,10 );
+			Dept dept=new Dept(10, "Accounts", "John");
+			em.persist(dept);
 			
 			Emp emp1= new Emp(301,"Ananth","London",56000);
 			Emp emp2= new Emp(302,"Kiran","London",56000);

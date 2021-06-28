@@ -10,15 +10,23 @@ import com.demo.spring.dao.EmpDao;
 @Service
 public class EmpService {
 
-	@Autowired
+	
 	private EmpDao dao;
+	
+	@Autowired
+	public EmpService(EmpDao dao) {
+		this.dao = dao;
+	}
 
 	/*
 	 * public void setDao(EmpDao dao) { this.dao = dao; }
 	 */
+	
 
 	public String registerEmp(String name) {
 		String response = dao.save(name);
 		return response;
 	}
+
+	
 }

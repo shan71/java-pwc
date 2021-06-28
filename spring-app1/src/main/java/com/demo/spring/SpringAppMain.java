@@ -11,7 +11,7 @@ public class SpringAppMain {
 		
 		Mail mail=(Mail)ctx.getBean("myMail");
 		
-		System.out.println(mail.getMessage().getBody());
+		System.out.println(mail.getMessage().getHeader());
 		
 		Mail mail1=ctx.getBean(Mail.class);
 		

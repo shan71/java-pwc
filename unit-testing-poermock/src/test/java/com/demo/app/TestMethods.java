@@ -15,7 +15,9 @@ public class TestMethods {
 	@Test
 	public void testStaticMethod() {
 		PowerMockito.mockStatic(Util.class);
+		
 		PowerMockito.when(Util.callStatic()).thenReturn("static");
+		
 		assertEquals("static", Util.callStatic());
 	}
 

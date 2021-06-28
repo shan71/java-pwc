@@ -20,6 +20,8 @@ public class Servlet1 extends HttpServlet {
 
 		String message=getServletConfig().getInitParameter("msg");
 		
+		System.out.println(request.getClass().getName());
+		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.print("<h1><u>"+message+"</u></h1>");

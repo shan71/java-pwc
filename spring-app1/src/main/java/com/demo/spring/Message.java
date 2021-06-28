@@ -8,6 +8,15 @@ public class Message {
 	public Message() {
 		
 	}
+	
+	
+
+	public Message(String header, String body) {
+		this.header = header;
+		this.body = body;
+	}
+
+
 
 	public String getHeader() {
 		return header;

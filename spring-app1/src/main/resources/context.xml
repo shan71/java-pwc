@@ -5,9 +5,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="msg" class="com.demo.spring.Message">
+	<bean id="msg1" class="com.demo.spring.Message">
 		<property name="header" value="Lunch Break" />
 		<property name="body" value="Lunch Break at 1:00pm" />
+	</bean>
+	
+	<bean id="msg" class="com.demo.spring.Message">
+		
+		<constructor-arg value="Meeting to discuss final release" index="1"/>
+		<constructor-arg value="meeting" index="0"/>
+		<property name="header" value="Metting cancelled"/>
 	</bean>
 	
 	<bean id="myMail" class="com.demo.spring.Mail">

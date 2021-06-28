@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = "/",servletNames = "s1")
+//@WebFilter(urlPatterns = "/",servletNames = "s1")
 public class LoggingFilter implements Filter{
 
 	@Override
