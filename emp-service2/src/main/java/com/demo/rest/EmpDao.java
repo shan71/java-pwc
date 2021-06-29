@@ -11,7 +11,7 @@ public interface EmpDao {
 
 	public String save(Emp e);
 
-	public String delete(int id);
+	public String delete(int id)  throws EmpNotFoundException;
 
-	public String update(Emp e);
+	public String update(Emp e) throws EmpNotFoundException;
 }
