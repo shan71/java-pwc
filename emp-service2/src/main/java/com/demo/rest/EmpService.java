@@ -12,6 +12,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -21,10 +22,12 @@ import com.demo.rest.entity.Emp;
 @Path("emp")
 public class EmpService {
 
+	EmpDao dao = new EmpDaoJpaImpl();
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Emp> listAll() {
-		List<Emp> empList = new ArrayList<>();
+		List<Emp> empList = dao.listAll();
 		return empList;
 	}
 
@@ -32,7 +35,15 @@ public class EmpService {
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Response findEmpById(@PathParam("id") int id) {
-		return Response.ok(new Emp(id, "Some One", "Some Location", 100000)).build();
+		Emp e;
+		Response resp = null;
+		try {
+			e = dao.findById(id);
+			return resp = Response.ok(e).build();
+		} catch (EmpNotFoundException e1) {
+			throw new WebApplicationException(e1.getMessage());
+		}
+
 	}
 
 	@Path("save")
@@ -40,8 +51,9 @@ public class EmpService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response savEmp(Emp e) {
-		System.out.println("EMP saved ");
-		return Response.status(Status.OK).entity(e.getName()).build();
+		String response = dao.save(e);
+
+		return Response.status(Status.OK).entity(response).build();
 
 	}
 

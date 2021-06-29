@@ -5,7 +5,7 @@ import java.util.List;
 import com.demo.rest.entity.Emp;
 
 public interface EmpDao {
-	public Emp findById(int id);
+	public Emp findById(int id) throws EmpNotFoundException;;
 
 	public List<Emp> listAll();
 
