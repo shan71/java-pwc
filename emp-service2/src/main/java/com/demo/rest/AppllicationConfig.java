@@ -9,6 +9,7 @@ public class AppllicationConfig extends ResourceConfig{
 
 	public AppllicationConfig() {
 		packages("com.demo.rest");
+		register(MyDIBinder.class);
 		
 	}
 }

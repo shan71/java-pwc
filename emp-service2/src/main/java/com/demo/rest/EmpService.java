@@ -26,7 +26,7 @@ import com.demo.rest.entity.Emp;
 public class EmpService {
 
 	@Inject
-	EmpDao dao= new EmpDaoJpaImpl();
+	EmpDao dao;//= new EmpDaoJpaImpl();
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
